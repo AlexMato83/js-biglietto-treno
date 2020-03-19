@@ -13,6 +13,7 @@ var euroCadKm = 0.21;
 //calcolare il prezzo base del biglietto
 var prezzoBiglietto = chilometri * euroCadKm;
 
+
 console.log("età acquirente = " + etaAcquirente);
 console.log("chilometri da percorrere = " + chilometri);
 console.log("costo base della tratta esente sconti = " + prezzoBiglietto + " euro");
@@ -20,9 +21,11 @@ console.log("costo base della tratta esente sconti = " + prezzoBiglietto + " eur
 // /*applicare lo sconto in base alla fascia di età,20% <18 e 40% >65*/
 if (etaAcquirente < 18) {
   prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 20 / 100);
-}  else if (etaAcquirente > 65){
+}  else if (etaAcquirente > 64){
   prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto * 40 / 100);
 }
 
 
-document.getElementById("biglietto").innerHTML= prezzoBiglietto;
+ prezzoBiglietto = prezzoBiglietto.toFixed(2);
+
+document.getElementById("biglietto").innerHTML= "il costo del tuo maledetto biglietto è di " + prezzoBiglietto + " euro";
